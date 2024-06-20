@@ -11,6 +11,7 @@
 #              The output is also printed to the console.
 # Version: 1.0 - Original Version
 # Version: 2.0 - Added HTML output and improved formatting. Made interactive with collapsible tree view.
+# Version: 2.0.1 - Removed hardcoded URL and used variable instead
 # --------------------------------------------------
 
 # User editable variables:
@@ -359,7 +360,7 @@ function Get-ChildPoliciesHTML {
         if ($hasChildren -or $hasSnowflakeDevices) {
             $message += "<span class='caret'></span>"
         }
-        $PolicyURL = "https://eu.ninjarmm.com/#/editor/policy/$($childPolicy.id)"
+        $PolicyURL = "https://$($NinjaOneInstance)/#/editor/policy/$($childPolicy.id)"
         $message += "$($childPolicy.name) <span class='badge bg-info'>Devices: $($childPolicy.DeviceCount)</span><span class='badge bg-warning'>Devices with Overrides: $($childPolicy.SnowFlakeCount)</span><a href='$policyURL' target='_blank' class='device-link'><i class='fas fa-square-arrow-up-right'></i></a>"
 
         $html += $message
@@ -399,7 +400,7 @@ function Get-NodeClassPoliciesHTML {
         if ($hasChildren -or $hasSnowflakeDevices) {
             $message += "<span class='caret'></span>"
         }
-        $PolicyURL = "https://eu.ninjarmm.com/#/editor/policy/$($policy.id)"
+        $PolicyURL = "https://$($NinjaOneInstance)/#/editor/policy/$($policy.id)"
         $message += "$($Policy.name) <span class='badge bg-info'>Devices: $($Policy.DeviceCount)</span><span class='badge bg-warning'>Devices with Overrides: $($Policy.SnowFlakeCount)</span><a href='$policyURL' target='_blank' class='device-link'><i class='fas fa-square-arrow-up-right'></i></a>"
 
         $html += $message
