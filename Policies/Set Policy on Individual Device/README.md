@@ -14,6 +14,7 @@ This script updates the assigned policy on a specific NinjaOne device. It sends 
   - `NinjaOneClientId`
   - `NinjaOneClientSecret`
 - **NinjaOne Instance URL:** e.g., `eu.ninjarmm.com`
+- **Policy ID to change too:** You can find this by loading a policy, and it's the number that appears at the top, IE for editor/policy/106 it would be 106
 
 ## How It Works
 
@@ -34,7 +35,7 @@ This script updates the assigned policy on a specific NinjaOne device. It sends 
      $NinjaOneClientId     = "your_client_id"
      $NinjaOneClientSecret = "your_client_secret"
      $DeviceId = 1
-     $NewPolicyId = 42
+     $NewPolicyId = 42 # You can find this by loading a policy, and it's the number that appears at the top
      ```
 
 2. **Run the Script:**
